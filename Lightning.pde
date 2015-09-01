@@ -1,7 +1,7 @@
-int startX=0;
-int startY=150;
-int endX=150;
-int endY=0;
+int startX=(int)(Math.random() * 250);
+int startY=0;
+int endX=0;
+int endY=150;
 
 void setup()
 {
@@ -12,19 +12,25 @@ void setup()
 }
 void draw()
 {
-	int redColor = (int)(Math.random()*256);
-	int greenColor = (int)(Math.random()*256);
-	int blueColor = (int)(Math.random()*256);
-	while (endX < 300) {
-		stroke(redColor, greenColor, blueColor);
-		endX = (startX + (int)(Math.random() *10));
-		endY = (startY + (int)(Math.random() *20)-10);
-		line(startX, startY, endX, endY);
-		startX=endX;
-		startY=endY;
-	}
+  int redColor = (int)(Math.random()*256);
+  int greenColor = (int)(Math.random()*256);
+  int blueColor = (int)(Math.random()*256);
+  while (endY < 300) {
+    stroke(redColor, greenColor, blueColor);
+    endX = (startX + (int)(Math.random() *20)-10);
+    endY = (startY + (int)(Math.random() *10));
+    line(startX, startY, endX, endY);
+    startX=endX;
+    startY=endY;
+  }
 }
+
 void mousePressed()
 {
-	redraw();
+  System.out.println("works");
+  startX=(int)(Math.random() * 300);
+  startY=0;
+  endX=0;
+  endY=150;
+  redraw();
 }
