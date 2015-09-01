@@ -32,7 +32,6 @@ void draw()
 
 void mousePressed()
 {
-  System.out.println("works");
   startX=(int)(Math.random() * 300);
   startY=0;
   endX=0;
